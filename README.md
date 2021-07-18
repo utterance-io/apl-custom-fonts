@@ -26,10 +26,20 @@ customFont.loadFont('./fonts/OpenSans_Medium.ttf');
 console.log(customFont.getAVG());
 ```
 
+Note: The options parameter accepts more entries. A complete overview of all available options is described below at `.updateOptions`.
+
 ## API
 
 ### `.loadFont()`
 Used to synchronously load a font in memory. The preferred file types are **.ttf** or **.otf**.
+
+### `.updateOptions(options: Options)`
+**Options** is an required object containing optional entries:
+- `fill` define the text color (default is *"black"*)
+- `fontSize` define the font size (default is *72*)
+- `stroke` define the stroke color (default is *"white"*)
+- `strokeWidth` define the stroke width (default is *1*)
+- `letterSpacing` define the letter spacing (default is *0*)
 
 ### `.getAVG(text?: string)`
 Convert text to AVG. Optionally uses a **text** parameter for passing text to convert to AVG.

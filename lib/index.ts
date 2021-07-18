@@ -15,7 +15,7 @@ export default class APLCustomFonts {
     private stroke: string = '';
     private strokeWidth: number = 1;
     private fontSize: number = 72;
-    private letterSpacing: number = 0.1;
+    private letterSpacing: number = 0;
     private textToSVG: any;
 
     constructor(text: string, options?: Options) {

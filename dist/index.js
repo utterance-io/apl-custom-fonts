@@ -8,7 +8,7 @@ var APLCustomFonts = /** @class */ (function () {
         this.stroke = '';
         this.strokeWidth = 1;
         this.fontSize = 72;
-        this.letterSpacing = 0.1;
+        this.letterSpacing = 0;
         this.text = text;
         if (options)
             this.updateOptions(options);
