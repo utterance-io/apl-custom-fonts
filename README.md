@@ -50,7 +50,6 @@ The generated AVGs can be implemented like any other AVG. It is recommended crea
 {
     "type": "APL",
     "version": "1.6",
-	...
 	"graphics": {
 		"HelloWorldText": {
 			"type": "AVG",
@@ -67,7 +66,6 @@ The generated AVGs can be implemented like any other AVG. It is recommended crea
 			}
 		}
 	},
-	...
 }
 ```
 
