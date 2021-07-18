@@ -51,8 +51,8 @@ export default class APLCustomFonts {
         return svgpath.from(path).translate(0, (dimensions.y * -1)).toString();
     }
 
-    public getPath() {
-        return this.textToSVG.getD(this.text, this.getOptions());
+    public getPath(text?: string) {
+        return this.textToSVG.getD(text || this.text, this.getOptions());
     }
 
     public getDimensions() {
@@ -69,7 +69,7 @@ export default class APLCustomFonts {
     public getAVG(text?: string) {
         console.log(this.textToSVG.getMetrics(text || this.text));
         const dimensions = this.getDimensions();
-        return {
+        return JSON.stringify({
             type: 'AVG',
             description: text || this.text,
             version: "1.2",
@@ -82,6 +82,6 @@ export default class APLCustomFonts {
                 strokeWidth: this.strokeWidth,
                 pathData: this.translateSVGPath(this.getPath())
             }
-        }
+        });
     }
 }

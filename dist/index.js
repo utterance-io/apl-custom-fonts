@@ -37,8 +37,8 @@ var APLCustomFonts = /** @class */ (function () {
         console.log(path);
         return svgpath.from(path).translate(0, (dimensions.y * -1)).toString();
     };
-    APLCustomFonts.prototype.getPath = function () {
-        return this.textToSVG.getD(this.text, this.getOptions());
+    APLCustomFonts.prototype.getPath = function (text) {
+        return this.textToSVG.getD(text || this.text, this.getOptions());
     };
     APLCustomFonts.prototype.getDimensions = function () {
         var metrics = this.textToSVG.getMetrics(this.text, this.getOptions());
@@ -54,7 +54,7 @@ var APLCustomFonts = /** @class */ (function () {
     APLCustomFonts.prototype.getAVG = function (text) {
         console.log(this.textToSVG.getMetrics(text || this.text));
         var dimensions = this.getDimensions();
-        return {
+        return JSON.stringify({
             type: 'AVG',
             description: text || this.text,
             version: "1.2",
@@ -67,7 +67,7 @@ var APLCustomFonts = /** @class */ (function () {
                 strokeWidth: this.strokeWidth,
                 pathData: this.translateSVGPath(this.getPath())
             }
-        };
+        });
     };
     return APLCustomFonts;
 }());

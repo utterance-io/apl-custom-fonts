@@ -23,7 +23,7 @@ const customFont = new APLCustomFonts("Hello world!", {
 });
 
 customFont.loadFont('./fonts/OpenSans_Medium.ttf');
-console.log(JSON.stringify(customFont.getAVG()));
+console.log(customFont.getAVG());
 ```
 
 ## API
@@ -52,7 +52,8 @@ MIT
 APLCustomFonts depends on the following modules:
 
 - [text-to-svg](https://www.npmjs.com/package/text-to-svg) by [shrhdk](https://www.npmjs.com/~shrhdk)
-	Depends on the following softwares:
+	
+    Depends on the following softwares:
 	- [opentype.js](https://github.com/nodebox/opentype.js): Copyright (c) 2015 Frederik De Bleser
 	- [commander](https://github.com/tj/commander.js): Copyright (c) 2011 TJ Holowaychuk <tj@vision-media.ca>
 - [svgpath](https://www.npmjs.com/package/svgpath/v/2.3.0) by [vitaly](https://www.npmjs.com/~vitaly)

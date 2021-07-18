@@ -18,26 +18,13 @@ export default class APLCustomFonts {
     private getOptions;
     getSVG(text?: string): any;
     private translateSVGPath;
-    getPath(): any;
+    getPath(text?: string): any;
     getDimensions(): {
         width: number;
         height: number;
         y: number;
         x: number;
     } | undefined;
-    getAVG(text?: string): {
-        type: string;
-        description: string;
-        version: string;
-        width: number | undefined;
-        height: number | undefined;
-        items: {
-            type: string;
-            fill: string;
-            stroke: string;
-            strokeWidth: number;
-            pathData: any;
-        };
-    };
+    getAVG(text?: string): string;
 }
 export {};
