@@ -20,17 +20,27 @@ export default class APLCustomFonts {
 
     constructor(text: string, options?: Options) {
         this.text = text;
-        if(options) {
-            this.fill = options.fill || this.fill,
-            this.stroke = options.stroke || this.stroke,
-            this.strokeWidth = options.strokeWidth || this.strokeWidth
-            this.fontSize = options.fontSize || this.fontSize,
-            this.letterSpacing = options.letterSpacing || this.letterSpacing
-        }
+        if (options) this.updateOptions(options);
     }
 
     public loadFont(path: string) {
         this.textToSVG = TextToSVG.loadSync(path);
+    }
+
+    private updateOptions(options: Options) {
+        this.fill = options.fill || this.fill;
+        this.stroke = options.stroke || this.stroke;
+        this.strokeWidth = options.strokeWidth || this.strokeWidth;
+        this.fontSize = options.fontSize || this.fontSize;
+        this.letterSpacing = options.letterSpacing || this.letterSpacing;
+    }
+
+    public setOptions(options: Options) {
+        this.updateOptions(options);
+    }
+
+    public setText(text: string) {
+        this.text = text;
     }
 
     private getOptions(): Options {
@@ -46,7 +56,7 @@ export default class APLCustomFonts {
 
     private translateSVGPath(path: string) {
         const dimensions = this.getDimensions();
-        if(!dimensions || !dimensions.y) return;
+        if (!dimensions || !dimensions.y) return;
         console.log(path);
         return svgpath.from(path).translate(0, (dimensions.y * -1)).toString();
     }
@@ -57,7 +67,7 @@ export default class APLCustomFonts {
 
     public getDimensions() {
         const metrics = this.textToSVG.getMetrics(this.text, this.getOptions());
-        if(!metrics) return;
+        if (!metrics) return;
         return {
             width: Math.ceil(metrics.width),
             height: Math.ceil(metrics.height),

@@ -10,16 +10,24 @@ var APLCustomFonts = /** @class */ (function () {
         this.fontSize = 72;
         this.letterSpacing = 0.1;
         this.text = text;
-        if (options) {
-            this.fill = options.fill || this.fill,
-                this.stroke = options.stroke || this.stroke,
-                this.strokeWidth = options.strokeWidth || this.strokeWidth;
-            this.fontSize = options.fontSize || this.fontSize,
-                this.letterSpacing = options.letterSpacing || this.letterSpacing;
-        }
+        if (options)
+            this.updateOptions(options);
     }
     APLCustomFonts.prototype.loadFont = function (path) {
         this.textToSVG = TextToSVG.loadSync(path);
+    };
+    APLCustomFonts.prototype.updateOptions = function (options) {
+        this.fill = options.fill || this.fill;
+        this.stroke = options.stroke || this.stroke;
+        this.strokeWidth = options.strokeWidth || this.strokeWidth;
+        this.fontSize = options.fontSize || this.fontSize;
+        this.letterSpacing = options.letterSpacing || this.letterSpacing;
+    };
+    APLCustomFonts.prototype.setOptions = function (options) {
+        this.updateOptions(options);
+    };
+    APLCustomFonts.prototype.setText = function (text) {
+        this.text = text;
     };
     APLCustomFonts.prototype.getOptions = function () {
         return {

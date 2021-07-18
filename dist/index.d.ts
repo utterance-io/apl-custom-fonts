@@ -15,6 +15,9 @@ export default class APLCustomFonts {
     private textToSVG;
     constructor(text: string, options?: Options);
     loadFont(path: string): void;
+    private updateOptions;
+    setOptions(options: Options): void;
+    setText(text: string): void;
     private getOptions;
     getSVG(text?: string): any;
     private translateSVGPath;
