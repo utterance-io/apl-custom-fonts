@@ -2,7 +2,7 @@
   "name": "apl-custom-fonts",
   "version": "1.0.0",
   "description": "Converts Text to AVG at runtime for easy use with the Alexa Presentation Language",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "watch": "tsc --watch"
   },
@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/utterance-io/apl-custom-fonts#readme",
   "devDependencies": {
+    "@types/node": "^16.3.3",
     "@types/pluralize": "^0.0.29",
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "pluralize": "^8.0.0"
+    "pluralize": "^8.0.0",
+    "svgpath": "^2.3.1",
+    "text-to-svg": "^3.1.5"
   }
 }

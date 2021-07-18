@@ -1,6 +1,43 @@
-/**
-* @Method: Returns the plural form of any noun.
-* @Param {string}
-* @Return {string}
-*/
-export declare function getPlural(str: any): string;
+interface Options {
+    fill?: string;
+    stroke?: string;
+    strokeWidth?: number;
+    fontSize?: number;
+    letterSpacing: number;
+}
+export default class APLCustomFonts {
+    text: string;
+    private fill;
+    private stroke;
+    private strokeWidth;
+    private fontSize;
+    private letterSpacing;
+    private textToSVG;
+    constructor(text: string, options?: Options);
+    loadFont(path: string): void;
+    private getOptions;
+    getSVG(text?: string): any;
+    private translateSVGPath;
+    getPath(): any;
+    getDimensions(): {
+        width: number;
+        height: number;
+        y: number;
+        x: number;
+    } | undefined;
+    getAVG(text?: string): {
+        type: string;
+        description: string;
+        version: string;
+        width: number | undefined;
+        height: number | undefined;
+        items: {
+            type: string;
+            fill: string;
+            stroke: string;
+            strokeWidth: number;
+            pathData: any;
+        };
+    };
+}
+export {};
